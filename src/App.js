@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 
 import {
-  View, StyleSheet, Text, Image, TouchableOpacity
+  View, StyleSheet, Text, Image, TouchableOpacity, PermissionsAndroid, Platform
 } from 'react-native';
 
 import SignatureView from './SignatureView';
+
+import {
+init,
+Geolocation,
+ } from "react-native-amap-geolocation";
 
 const flexCenter = {
   flex: 1,
@@ -13,14 +18,22 @@ const flexCenter = {
 };
 
 class ExampleApp extends Component {
-
   constructor(props) {
     super(props);
 
     this.state = {
-      data: null
+      data: null,
+      location: null
     };
   }
+
+componentDidMount() {
+    this.geolocationInit()
+}
+  componentWillUnmount() {
+//    Geolocation.stop();
+  }
+
 
   render() {
     const {data} = this.state;
@@ -60,22 +73,38 @@ class ExampleApp extends Component {
       </View>
     );
   }
+
+    _showSignatureView() {
+      this._signatureView.show(true);
+    }
+
+    _onSave(result) {
+      const base64String = `data:image/png;base64,${result.encoded}`;
+      this.setState({data: base64String});
+
+      this._signatureView.show(false);
+    }
+
+//  初始化位置信息
+geolocationInit = async () => {
+    if (Platform.OS === "android") {
+      await PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.ACCESS_COARSE_LOCATION);
+    }
+    await init({
+      android: "c6eaf9c6fc47bb2286d8dd46c8efd366"
+    });
+}
+
  //获取位置
  getLocation = () => {
+    Geolocation.getCurrentPosition(({ coords }) => {
+      alert(JSON.stringify(coords));
+    });
 
  }
 
 
-  _showSignatureView() {
-    this._signatureView.show(true);
-  }
 
-  _onSave(result) {
-    const base64String = `data:image/png;base64,${result.encoded}`;
-    this.setState({data: base64String});
-
-    this._signatureView.show(false);
-  }
 }
 
 export default ExampleApp;

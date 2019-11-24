@@ -12,6 +12,7 @@
   "dependencies": {
     "react": "16.9.0",
     "react-native": "0.61.4",
+    "react-native-amap-geolocation": "^1.0.4",
     "react-native-signature-capture": "^0.4.10"
   },
   "devDependencies": {

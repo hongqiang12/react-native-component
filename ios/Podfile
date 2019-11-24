@@ -36,6 +36,8 @@ target 'MyDemo' do
 
   pod 'react-native-signature-capture', :path => '../node_modules/react-native-signature-capture'
 
+  pod 'react-native-amap-geolocation', :path => '../node_modules/react-native-amap-geolocation'
+
   target 'MyDemoTests' do
     inherit! :search_paths
     # Pods for testing
