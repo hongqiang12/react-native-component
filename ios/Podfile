@@ -38,6 +38,10 @@ target 'MyDemo' do
 
   pod 'react-native-amap-geolocation', :path => '../node_modules/react-native-amap-geolocation'
 
+  pod 'JPush', :path => '../node_modules/jpush-react-native'
+
+  pod 'JCore', :path => '../node_modules/jcore-react-native'
+
   target 'MyDemoTests' do
     inherit! :search_paths
     # Pods for testing

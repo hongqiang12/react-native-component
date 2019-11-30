@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 
 import {
-  View, StyleSheet, Text, Image, TouchableOpacity, PermissionsAndroid, Platform
+  View, StyleSheet, Text, Image, TouchableOpacity, PermissionsAndroid, Platform,Button
 } from 'react-native';
 
 import SignatureView from './SignatureView';
+
+import JPush from 'jpush-react-native';
 
 import {
 init,
@@ -29,7 +31,9 @@ class ExampleApp extends Component {
 
 componentDidMount() {
     this.geolocationInit()
+    this._onJPush()
 }
+
   componentWillUnmount() {
 //    Geolocation.stop();
   }
@@ -39,6 +43,16 @@ componentDidMount() {
     const {data} = this.state;
     return (
       <View style={flexCenter}>
+        <Button title="setLoggerEnable"
+            onPress={() => JPush.setLoggerEnable({"debug": true}
+            )}/>
+
+        <Button title="getRegisterID"
+                onPress={() => JPush.getRegistrationID(result =>
+                    console.log("registerID:" + JSON.stringify(result))
+                )}/>
+
+
         <TouchableOpacity onPress={this.getLocation} style={{height: 40,backgroundColor:'blue'}}>
             <View style={[flexCenter, {padding: 10}]}>
                 <Text style={{fontSize: 18, fontWeight: 'bold',textAlign: 'center'}}>
@@ -102,6 +116,41 @@ geolocationInit = async () => {
     });
 
  }
+
+// 推送消息链接
+_onJPush() {
+    JPush.init();
+    //连接状态
+    this.connectListener = result => {
+      console.log("connectListener:" + JSON.stringify(result))
+    };
+    JPush.addConnectEventListener(this.connectListener);
+    //通知回调
+    this.notificationListener = result => {
+      console.log("notificationListener:" + JSON.stringify(result))
+    };
+    JPush.addNotificationListener(this.notificationListener);
+    //自定义消息回调
+    this.customMessageListener = result => {
+      console.log("customMessageListener:" + JSON.stringify(result))
+    };
+    JPush.addCustomMessagegListener(this.customMessageListener);
+    //本地通知回调 todo
+    this.localNotificationListener = result => {
+      console.log("localNotificationListener:" + JSON.stringify(result))
+    };
+    JPush.addLocalNotificationListener(this.localNotificationListener);
+    //tag alias事件回调
+    this.tagAliasListener = result => {
+      console.log("tagAliasListener:" + JSON.stringify(result))
+    };
+    JPush.addTagAliasListener(this.tagAliasListener);
+    //手机号码事件回调
+    this.mobileNumberListener = result => {
+      console.log("mobileNumberListener:" + JSON.stringify(result))
+    };
+    JPush.addMobileNumberListener(this.mobileNumberListener);
+}
 
 
 
