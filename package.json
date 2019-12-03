@@ -15,7 +15,10 @@
     "react": "16.9.0",
     "react-native": "0.61.4",
     "react-native-amap-geolocation": "^1.0.4",
-    "react-native-signature-capture": "^0.4.10"
+    "react-native-gesture-handler": "^1.5.2",
+    "react-native-signature-capture": "^0.4.10",
+    "react-navigation": "^4.0.10",
+    "react-navigation-stack": "^1.10.3"
   },
   "devDependencies": {
     "@babel/core": "^7.7.4",
