@@ -3386,6 +3386,11 @@ istanbul-reports@^2.2.6:
   dependencies:
     handlebars "^4.1.2"
 
+jcore-react-native@^1.5.0:
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/jcore-react-native/-/jcore-react-native-1.9.1.tgz#7353a8fd25391e62a9399a149459b0ca22e8b04e"
+  integrity sha512-L1UWP2yRHLhx+hmRI90jEYDb+ICaN3SLFpnPivYs0STtDxr/HXEGZfsaATeWer9QBqnA7MIcZkUj+VvacC2UaQ==
+
 jest-changed-files@^24.9.0:
   version "24.9.0"
   resolved "https://registry.yarnpkg.com/jest-changed-files/-/jest-changed-files-24.9.0.tgz#08d8c15eb79a7fa3fc98269bc14b451ee82f8039"
@@ -3750,6 +3755,11 @@ jetifier@^1.6.2:
   resolved "https://registry.yarnpkg.com/jetifier/-/jetifier-1.6.4.tgz#6159db8e275d97980d26162897a0648b6d4a3222"
   integrity sha512-+f/4OLeqY8RAmXnonI1ffeY1DR8kMNJPhv5WMFehchf7U71cjMQVKkOz1n6asz6kfVoAqKNWJz1A/18i18AcXA==
 
+jpush-react-native@^2.6.1:
+  version "2.8.2"
+  resolved "https://registry.yarnpkg.com/jpush-react-native/-/jpush-react-native-2.8.2.tgz#db7e91811ab5395a7d60a08d0092c780f8c14d3d"
+  integrity sha512-yyRPezx7symiC9d6vYc2dwLC0PqSuL/YrjtXHdUi4/bl3IZD95KQ4s8ZXJjZqx7ibqF+cp0ZDc5j7wUmX78j9A==
+
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
@@ -4023,9 +4033,9 @@ lodash.unescape@4.0.1:
   integrity sha1-vyJJiGzlFM2hEvrpIYzcBlIR/Jw=
 
 lodash@^4.17.10, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.5, lodash@^4.3.0:
-  version "4.17.15"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
-  integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
+  version "4.17.21"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
+  integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
 log-symbols@^2.2.0:
   version "2.2.0"
@@ -5157,7 +5167,7 @@ prompts@^2.0.1:
     kleur "^3.0.3"
     sisteransi "^1.0.3"
 
-prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.5.10, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -5226,6 +5236,18 @@ react-is@^16.8.1, react-is@^16.8.4, react-is@^16.9.0:
   version "16.12.0"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.12.0.tgz#2cc0fe0fba742d97fd527c42a13bec4eeb06241c"
   integrity sha512-rPCkf/mWBtKc97aLL9/txD8DZdemK0vkA3JMLShjlJB3Pj3s+lpf1KaBzMfQrAmhMQB0n1cU/SUGgKKBCe837Q==
+
+react-native-amap-geolocation@^1.0.4:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/react-native-amap-geolocation/-/react-native-amap-geolocation-1.1.2.tgz#4388731828bbe84493ac5894d0df27b4402ae3c5"
+  integrity sha512-M8uUqfnfrKwJka1byooL/NHD7EkTBEwOYswQiqu7bBkB24AkGeFZbd3h1XzaVLVyuBNfjHHm+W+fO8Apghxr5g==
+
+react-native-signature-capture@^0.4.10:
+  version "0.4.11"
+  resolved "https://registry.yarnpkg.com/react-native-signature-capture/-/react-native-signature-capture-0.4.11.tgz#131e50bab96701611e314f70892bd80f21ec9202"
+  integrity sha512-vDyTso6zAbSaGXxgethR3vE6d14ehpt6C4Q3GWkcobMI27jYESbrL7QuGjiyFSGIeDnkLNNB9fAky9Jcw+MzsA==
+  dependencies:
+    prop-types "^15.5.10"
 
 react-native@0.61.4:
   version "0.61.4"
